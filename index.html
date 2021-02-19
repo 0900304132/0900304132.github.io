@@ -54,116 +54,118 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></he
           <a href="#chrome-安装-surfingKey" class="heading-link"><i class="fas fa-link"></i></a>chrome 安装 surfingKey</h2>
       </li>
 </ol>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2021/02/18/scss%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96scss%E5%8F%98%E9%87%8F-%E5%B9%B6%E9%80%9A%E8%BF%87js%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9scss%E5%8F%98%E9%87%8F/">scss引入其他scss变量, 并通过js动态修改scss变量</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-02-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-18</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>a.scss</p>
-<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2021/02/18/scss%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96scss%E5%8F%98%E9%87%8F-%E5%B9%B6%E9%80%9A%E8%BF%87js%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9scss%E5%8F%98%E9%87%8F/">scss引入其他scss变量, 并通过js动态修改scss变量</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-02-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>a.scss</p>
+<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 <p>b.scss</p>
-<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$bgColor</span>:red;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$bgColor</span>: red;</span><br></pre></td></tr></table></div></figure>
 
 
-        <h2 id="1-a-scss需要引入b-scss中的变量"   >
-          <a href="#1-a-scss需要引入b-scss中的变量" class="heading-link"><i class="fas fa-link"></i></a>1 a.scss需要引入b.scss中的变量</h2>
-      <p>a.scss(只要引入成功后, 修改b.scss里$bgColor的值, a.scss中的background的值就会跟着改变.)</p>
-<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@improt</span> <span class="string">'b.scss'</span></span><br><span class="line">.test&#123;</span><br><span class="line">  <span class="attribute">background</span>:<span class="variable">$bgColor</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+        <h2 id="1-a-scss-需要引入-b-scss-中的变量"   >
+          <a href="#1-a-scss-需要引入-b-scss-中的变量" class="heading-link"><i class="fas fa-link"></i></a>1 a.scss 需要引入 b.scss 中的变量</h2>
+      <p>a.scss(只要引入成功后, 修改 b.scss 里$bgColor 的值, a.scss 中的 background 的值就会跟着改变.)</p>
+<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@improt</span> <span class="string">'b.scss'</span></span><br><span class="line">.test &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="variable">$bgColor</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 
-        <h2 id="2-需要通过js做到动态修改b-scss变量值"   >
-          <a href="#2-需要通过js做到动态修改b-scss变量值" class="heading-link"><i class="fas fa-link"></i></a>2 需要通过js做到动态修改b.scss变量值</h2>
-      <p>b.scss需要绑定一个变量名, 用于js方法中.(变量名可以任意取, 默认值不能是字符串)</p>
-<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用var来盛放--test变量名,默认值为red,用于js做动态修改</span></span><br><span class="line"><span class="variable">$bgColor</span>:var(--test,red);</span><br></pre></td></tr></table></div></figure>
+        <h2 id="2-需要通过-js-做到动态修改-b-scss-变量值"   >
+          <a href="#2-需要通过-js-做到动态修改-b-scss-变量值" class="heading-link"><i class="fas fa-link"></i></a>2 需要通过 js 做到动态修改 b.scss 变量值</h2>
+      <p>b.scss 需要绑定一个变量名, 用于 js 方法中.(变量名可以任意取, 默认值不能是字符串)</p>
+<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用var来盛放--test变量名,默认值为red,用于js做动态修改</span></span><br><span class="line"><span class="variable">$bgColor</span>: var(--test, red);</span><br></pre></td></tr></table></div></figure>
 
 <p>test.js</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].style.setProperty(<span class="string">'--test'</span>, <span class="string">'yellow'</span>);</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/12/03/2020-12-03/">vue中的style变量</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-12-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-12-03</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="vue-中的style变量"   >
-          <a href="#vue-中的style变量" class="heading-link"><i class="fas fa-link"></i></a>vue 中的style变量</h1>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].style.setProperty(<span class="string">'--test'</span>, <span class="string">'yellow'</span>)</span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/12/03/2020-12-03/">vue中的style变量</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-12-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="vue-中的-style-变量"   >
+          <a href="#vue-中的-style-变量" class="heading-link"><i class="fas fa-link"></i></a>vue 中的 style 变量</h1>
       <ol>
 <li><p><strong>css</strong></p>
- <figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line">      --var:red|10px|100%; </span><br><span class="line">        </span><br><span class="line">      <span class="selector-tag">color</span>: <span class="selector-tag">--var</span>; </span><br><span class="line">        </span><br><span class="line">      <span class="selector-tag">width</span><span class="selector-pseudo">:--var</span>; </span><br><span class="line"></span><br><span class="line">      <span class="selector-tag">height</span><span class="selector-pseudo">:--var</span>; </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"> 2. **<span class="selector-tag">scss</span>**</span><br><span class="line"></span><br><span class="line">``` <span class="selector-tag">scss</span></span><br><span class="line"></span><br><span class="line">--var:red|10px|100%;</span><br><span class="line"></span><br><span class="line">color:#&#123;--var&#125;;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--var: red|10px|100%;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">color</span>: <span class="selector-tag">--var</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">--var</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">height</span>: <span class="selector-tag">--var</span>;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>scss</strong></p>
+<figure class="highlight scss"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--<span class="selector-tag">var</span>: red|<span class="number">10px</span>|<span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line"><span class="attribute">color</span>: #&#123;--var&#125;;</span><br></pre></td></tr></table></div></figure>
 </li>
 </ol>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/07/29/log-2020-07-29/">log_2020-07-29</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/07/29/log-2020-07-29/">微信小程序 绝对定位 点击事件</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="微信小程序-绝对定位-点击事件"   >
           <a href="#微信小程序-绝对定位-点击事件" class="heading-link"><i class="fas fa-link"></i></a>微信小程序 绝对定位 点击事件</h1>
-      <p>微信小程序的input是原生组件, 会浮在最上面. 而且在视觉上还是透明的. 感觉在普通元素的下面.<br>即使一个元素是绝对定位的, 也会被遮住.<br>这样就会造成普通元素的点击事件触发不灵敏.<br>就算使用官方提供的cover-view也不太有效.</p>
+      <p>微信小程序的 input 是原生组件, 会浮在最上面. 而且在视觉上还是透明的. 感觉在普通元素的下面.<br>即使一个元素是绝对定位的, 也会被遮住.<br>这样就会造成普通元素的点击事件触发不灵敏.<br>就算使用官方提供的 cover-view 也不太有效.</p>
 <blockquote>
 <p>理想的做法就是给原生组件固定大小.</p>
 </blockquote>
-<p>让它不要把其他元素遮住. </p>
+<p>让它不要把其他元素遮住.</p>
 <hr>
 
         <h2 id="end"   >
           <a href="#end" class="heading-link"><i class="fas fa-link"></i></a>end</h2>
-      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/07/27/2020-07-27/">log 2020-07-27</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-27</span></span></div></header><div class="post-body"><div class="post-excerpt">
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/07/27/2020-07-27/">log 2020-07-27</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="跑上来更新一下"   >
           <a href="#跑上来更新一下" class="heading-link"><i class="fas fa-link"></i></a>跑上来更新一下</h2>
       
         <h1 id="最近加班很多"   >
           <a href="#最近加班很多" class="heading-link"><i class="fas fa-link"></i></a>最近加班很多</h1>
       <p><strong><em>有点累</em></strong></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/15/2020-05-15/">2020-05-15</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-08</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="ss昨天突然不能用了"   >
-          <a href="#ss昨天突然不能用了" class="heading-link"><i class="fas fa-link"></i></a>ss昨天突然不能用了</h1>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/15/2020-05-15/">2020-05-15</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="ss-昨天突然不能用了"   >
+          <a href="#ss-昨天突然不能用了" class="heading-link"><i class="fas fa-link"></i></a>ss 昨天突然不能用了</h1>
       <ul>
 <li>可以链接 但是不能访问</li>
 <li>远程去服务器上检查了下是可以访问的</li>
-<li>Google了下 应该是端口被封了</li>
+<li>Google 了下 应该是端口被封了</li>
 <li>修改端口 重启</li>
-<li>解决问题. </li>
+<li>解决问题.</li>
 </ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/09/2020-05-09/">2020-05-09</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/09/2020-05-09/">2020-05-09</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="2020-05-09"   >
           <a href="#2020-05-09" class="heading-link"><i class="fas fa-link"></i></a>2020-05-09</h1>
       
         <h2 id="vue-loader-css-作用域"   >
           <a href="#vue-loader-css-作用域" class="heading-link"><i class="fas fa-link"></i></a>vue loader css 作用域</h2>
       
-        <h3 id="vue-style-scope的时候有些问题"   >
-          <a href="#vue-style-scope的时候有些问题" class="heading-link"><i class="fas fa-link"></i></a>vue style scope的时候有些问题</h3>
+        <h3 id="vue-style-scope-的时候有些问题"   >
+          <a href="#vue-style-scope-的时候有些问题" class="heading-link"><i class="fas fa-link"></i></a>vue style scope 的时候有些问题</h3>
       <ul>
-<li><p>有些插件的子选择器不会带上data属性, 导致样式没有生效 </p>
-</li>
-<li><p>调查了发现 vue-loader 有”深度作用选择器”这个概念</p>
-</li>
-<li><p><span class="exturl"><a class="exturl__link"   href="https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E6%B7%B1%E5%BA%A6%E4%BD%9C%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"  target="_blank" rel="noopener">深度作用选择器</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p>如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用 &gt;&gt;&gt; 操作符：  </p>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.a</span> &gt;&gt;&gt; <span class="selector-class">.b</span> &#123; <span class="comment">/* ... */</span> &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<p>上述代码将会编译成：  </p>
-<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.a</span><span class="selector-attr">[data-v-f3f3eg9]</span> <span class="selector-class">.b</span> &#123; <span class="comment">/* ... */</span> &#125;</span><br></pre></td></tr></table></div></figure>
-<p>有些像 Sass 之类的预处理器无法正确解析 &gt;&gt;&gt;。这种情况下你可以使用 /deep/ 操作符取而代之——这是一个 &gt;&gt;&gt; 的别名，同样可以正常工作。</p>
-</li>
+<li>有些插件的子选择器不会带上 data 属性, 导致样式没有生效</li>
+<li>调查了发现 vue-loader 有”深度作用选择器”这个概念</li>
+<li><span class="exturl"><a class="exturl__link"   href="https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E6%B7%B1%E5%BA%A6%E4%BD%9C%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"  target="_blank" rel="noopener">深度作用选择器</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
 </ul>
+<p>如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用 &gt;&gt;&gt; 操作符：</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.a</span> &gt;&gt;&gt; <span class="selector-class">.b</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* ... */</span></span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>上述代码将会编译成：</p>
+<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.a</span><span class="selector-attr">[data-v-f3f3eg9]</span> <span class="selector-class">.b</span> &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>有些像 Sass 之类的预处理器无法正确解析 &gt;&gt;&gt;。这种情况下你可以使用 /deep/ 操作符取而代之——这是一个 &gt;&gt;&gt; 的别名，同样可以正常工作。</p>
 <hr>
 <blockquote>
 <p>end</p>
 </blockquote>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/07/2020-05-07/">2020-05-07</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-08</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/07/2020-05-07/">2020-05-07</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="2020-05-07"   >
           <a href="#2020-05-07" class="heading-link"><i class="fas fa-link"></i></a>2020-05-07</h1>
-      <p>最近网易云音乐PC客户端都只能听标清音质的歌了, 虽然是个木耳朵听不出很大区别, 但是不能忍<br>vscode上的第三客户端好像没有音质的限制<br>装起来<br>反馈如下  </p>
+      <p>最近网易云音乐 PC 客户端都只能听标清音质的歌了, 虽然是个木耳朵听不出很大区别, 但是不能忍<br>vscode 上的第三客户端好像没有音质的限制<br>装起来<br>反馈如下</p>
 <ul>
 <li>插件名字 <span class="exturl"><a class="exturl__link"   href="https://marketplace.visualstudio.com/items?itemName=nondanee.vsc-netease-music"  target="_blank" rel="noopener">VSC Netease Music</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
-<li>功能挺全, 唯独需要自己手动替换FFmpeg</li>
-<li>默认声音挺大的  </li>
+<li>功能挺全, 唯独需要自己手动替换 FFmpeg</li>
+<li>默认声音挺大的</li>
 </ul>
 <hr>
-<p>完善了一下这个blog的样式<br>修改内容如下  </p>
+<p>完善了一下这个 blog 的样式<br>修改内容如下</p>
 <ol>
-<li>开启tag category</li>
-<li>修改favicon</li>
+<li>开启 tag category</li>
+<li>修改 favicon</li>
 <li>开启顶部图片</li>
-<li>开启canvasRibbon特效</li>
-<li>添加了 GitHub和B站的社交链接  </li>
+<li>开启 canvasRibbon 特效</li>
+<li>添加了 GitHub 和 B 站的社交链接</li>
 </ol>
 <hr>
 <p>end</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/06/2020-05-06/">2020-05-06</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-08</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="2020年5月6日"   >
-          <a href="#2020年5月6日" class="heading-link"><i class="fas fa-link"></i></a>2020年5月6日</h1>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/05/06/2020-05-06/">2020-05-06</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-05-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="2020-年-5-月-6-日"   >
+          <a href="#2020-年-5-月-6-日" class="heading-link"><i class="fas fa-link"></i></a>2020 年 5 月 6 日</h1>
       <ul>
 <li><p>调查了一下公众号能否链接蓝牙打印机的事情</p>
 </li>
-<li><p>用官方的js-SDK并不能直接连接蓝牙打印机</p>
+<li><p>用官方的 js-SDK 并不能直接连接蓝牙打印机</p>
 </li>
 <li><p>so</p>
 <blockquote>
@@ -173,22 +175,23 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.0"></he
 </ul>
 <hr>
 <p><strong><em>哈哈哈哈哈哈哈哈</em></strong></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/04/30/deploy_by_git/">depoly by git</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-04-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-08</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
-<li><p>玩了一会  </p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2020/04/30/deploy_by_git/">depoly by git</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-04-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-02-19</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
+<li><p>玩了一会</p>
 </li>
-<li><p>发现hexo其实可以自动部署</p>
+<li><p>发现 hexo 其实可以自动部署</p>
 </li>
-<li><p>可以选择用git</p>
+<li><p>可以选择用 git</p>
 </li>
 <li><p>配置文件加一点配置就好</p>
-<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"></span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt; </span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"></span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></div></figure>
 </li>
 <li><p>再用下面的命令</p>
 <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --deploy</span><br></pre></td></tr></table></div></figure>
+
 </li>
 </ul>
 <hr>
 <blockquote>
 <p>这样就可以在生成静态文件的时候自动发布了</p>
 </blockquote>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bold"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v4.2.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="js/utils.js?v=2.1.1"></script><script src="js/stun-boot.js?v=2.1.1"></script><script src="js/scroll.js?v=2.1.1"></script><script src="js/header.js?v=2.1.1"></script><script src="js/sidebar.js?v=2.1.1"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bold"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">4</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v4.2.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="js/utils.js?v=2.1.1"></script><script src="js/stun-boot.js?v=2.1.1"></script><script src="js/scroll.js?v=2.1.1"></script><script src="js/header.js?v=2.1.1"></script><script src="js/sidebar.js?v=2.1.1"></script></body></html>
