@@ -29,7 +29,84 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">喵苗淼妙兮</div><div class="header-banner-info__subtitle">越懒越机智啊</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2022/01/19/2022-01-19/">Vue异步更新队列</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">喵苗淼妙兮</div><div class="header-banner-info__subtitle">越懒越机智啊</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2022/01/25/2022-01-25/">Node.nodeType</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-25</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="Node-nodeType"   >
+          <a href="#Node-nodeType" class="heading-link"><i class="fas fa-link"></i></a>Node.nodeType</h1>
+      <p>只读属性<code>Node.nodeType</code>表示的是该节点的类型.</p>
+
+        <h2 id="描述"   >
+          <a href="#描述" class="heading-link"><i class="fas fa-link"></i></a>描述</h2>
+      <p><code>nodeType</code>属性可以用来区分不同类型的节点, 比如<a href="">元素</a>,<a href="">文本</a>,和<a href="">注释</a>.</p>
+
+        <h2 id="语法"   >
+          <a href="#语法" class="heading-link"><i class="fas fa-link"></i></a>语法</h2>
+      <blockquote>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> type = nodeType</span><br></pre></td></tr></table></div></figure>
+</blockquote>
+<p>返回一个整数, 其代表的是节点类型. 其所有可能的值请参考<a href="#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B%E5%B8%B8%E9%87%8F">节点类型常量</a></p>
+
+        <h2 id="常量"   >
+          <a href="#常量" class="heading-link"><i class="fas fa-link"></i></a>常量</h2>
+      
+        <h3 id="节点类型常量"   >
+          <a href="#节点类型常量" class="heading-link"><i class="fas fa-link"></i></a>节点类型常量</h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>常量</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node.ELEMENT_NODE</td>
+<td>1</td>
+<td>一个<a href="">元素</a>节点, 例如<code>&lt;p&gt;</code>和<code>&lt;div&gt;</code>.</td>
+</tr>
+<tr>
+<td>Node.TEXT_NODE</td>
+<td>3</td>
+<td><code>Element</code>或者<code>Attr</code>中实际的<a href="">文字</a></td>
+</tr>
+<tr>
+<td>Node.CDATA_SECTION_NODE</td>
+<td>4</td>
+<td>一个<a href="">CDATASection</a>, 例如&lt;!CDATA[[…]]&gt;</td>
+</tr>
+<tr>
+<td>Node.PROCESSING_INSTRUCTION_NODE</td>
+<td>7</td>
+<td>一个用于 XML 文档的[ProcessingInstruction(en-US)],例如<?xml-stylesheet ... ?>声明.</td>
+</tr>
+<tr>
+<td>Node.COMMENT_NODE</td>
+<td>8</td>
+<td>一个<a href="">Comment</a>节点.</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_NODE</td>
+<td>9</td>
+<td>一个<a href="">Document</a>节点</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_TYPE_NODE</td>
+<td>10</td>
+<td>描述文档类型的<a href="">DocumentType</a>节点. 例如<!DOCTYPE html> 就是用于 HTML5 的.</td>
+</tr>
+<tr>
+<td>Node.DOCUMENT_FRAGMENT_NODE</td>
+<td>11</td>
+<td>一个<a href="">DocumentFragment</a>节点</td>
+</tr>
+</tbody></table></div>
+
+        <h2 id="例子"   >
+          <a href="#例子" class="heading-link"><i class="fas fa-link"></i></a>例子</h2>
+      
+        <h3 id="不同的节点类型"   >
+          <a href="#不同的节点类型" class="heading-link"><i class="fas fa-link"></i></a>不同的节点类型</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.nodeType === Node.DOCUMENT_NODE <span class="comment">// true</span></span><br><span class="line"><span class="built_in">document</span>.doctype.nodeType === Node.DOCUMENT_TYPE_NODE <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fragment = <span class="built_in">document</span>.createDocumentFragment()</span><br><span class="line">fragment.nodeType === Node.DOCUMENT_FRAGMENT_NODE <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">&#x27;p&#x27;</span>)</span><br><span class="line">p.textContent = <span class="string">&#x27;很久很久以前...&#x27;</span></span><br><span class="line"></span><br><span class="line">p.nodeType === Node.ELEMENT_NODE <span class="comment">// true</span></span><br><span class="line">p.firstChild.nodeType === Node.TEXT_NODE <span class="comment">// true</span></span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2022/01/19/2022-01-19/">Vue异步更新队列</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="异步更新队列"   >
           <a href="#异步更新队列" class="heading-link"><i class="fas fa-link"></i></a>异步更新队列</h1>
       <p>可能你还没有注意到, Vue 在更新 DOM 时是<strong>异步</strong>执行的. 只要侦听到数据变化, Vue 将开启一个队列, 并缓冲在同一个事件循环发生中的所有数据变更. 如果一个 watcher 被多次触发, 只会被推入到队列中一次. 这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作是非常重要的. 然后在下一个事件循环”tick”中, Vue 刷新队列并执行实际(已去重的)工作. Vue 在内部对异步队列尝试使用原生的 <code>Promis.then</code>, <code>MutationObserver</code> 和 <code>setImmediate</code>, 如果执行环境不支持, 则会采用<code>setTimeout(fn,0)</code> 代替.</p>
@@ -213,21 +290,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></he
         <h2 id="Vant-和-ElementUI-不一样-change-事件没有进行封装-需要自己取-target-value"   >
           <a href="#Vant-和-ElementUI-不一样-change-事件没有进行封装-需要自己取-target-value" class="heading-link"><i class="fas fa-link"></i></a>Vant 和 ElementUI 不一样. change 事件没有进行封装. 需要自己取 target.value</h2>
       <p><strong>END</strong></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2021/11/17/2021-11-17/">Vant Field label-position</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="Field-输入组件-新增-label-position"   >
-          <a href="#Field-输入组件-新增-label-position" class="heading-link"><i class="fas fa-link"></i></a>Field 输入组件 新增 label-position</h1>
-      <p>一行样式就可以搞定的</p>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-field</span> <span class="attr">class</span>=<span class="string">"my-field"</span> /&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight css"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.my-field</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="失败主义的表现主要有以下几种形式："   >
-          <a href="#失败主义的表现主要有以下几种形式：" class="heading-link"><i class="fas fa-link"></i></a>失败主义的表现主要有以下几种形式：</h3>
-      <ul>
-<li>一、把自己在太空军中的使命看作是一项普通的职业，在工作上虽然尽心尽职，认真负责，但缺少热情和使命感，对自己工作的最终意义产生怀疑。</li>
-<li>二、消极等待。认为这场战争的胜负取决于科学家和工程师，在基础研究和关键技术研究没有取得重大突破之前，太空军只是空中楼阁，所以对军队的工作重点不明确，仅满足于军种组建的事务性工作，缺少创新。</li>
-<li>三、抱有一种不切实际的幻想，要求借助冬眠技术使自己跨越四个世纪，直接参加最后决战。已经有几个年轻同志表达了这种愿望，有人还递交了正式申请。表面上看，这是一种渴望投身于战争最前沿的积极心态，但实质上是失败主义的另一种表现形式，对战争的胜利缺乏信心，对工作的意义产生怀疑，于是军人的尊严成了工作和人生中仅有的支柱。</li>
-<li>四、与上一种表现相反，对军人的尊严也产生了怀疑，认为军队传统的道德准则已不适合这场战争，战斗到最后是没有意义的。认为军人尊严存在的前提是有人看到这种尊严，而这场战争一旦失败，宇宙中将无人存在，那这种尊严本身也失去了意义。虽然只有少数人持有这种想法，但这种消解太空武装力量最终价值的思想是十分有害的。</li>
-</ul>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bitcoin"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">28</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">4</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.0.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="js/utils.js?v=2.1.1"></script><script src="js/stun-boot.js?v=2.1.1"></script><script src="js/scroll.js?v=2.1.1"></script><script src="js/header.js?v=2.1.1"></script><script src="js/sidebar.js?v=2.1.1"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bitcoin"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">29</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">4</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.0.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="js/utils.js?v=2.1.1"></script><script src="js/stun-boot.js?v=2.1.1"></script><script src="js/scroll.js?v=2.1.1"></script><script src="js/header.js?v=2.1.1"></script><script src="js/sidebar.js?v=2.1.1"></script></body></html>
