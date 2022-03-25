@@ -36,10 +36,10 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></he
 <li>
         <h2 id="Caps-映射成-Esc"   >
           <a href="#Caps-映射成-Esc" class="heading-link"><i class="fas fa-link"></i></a>Caps 映射成 Esc</h2>
-      <p><span class="exturl"><a class="exturl__link"   href="https://kang000feng.github.io/blog/2015/02/04/remap-capslock-key/"  target="_blank" rel="noopener">Vim 技巧——将 CapsLock 键映射成 Esc 键</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>Windows 下将 CasLock 转换成 Esc</p>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://kang000feng.github.io/blog/2015/02/04/remap-capslock-key/" >Vim 技巧——将 CapsLock 键映射成 Esc 键</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>Windows 下将 CasLock 转换成 Esc</p>
 <hr>
 <p>将下面的代码保存为 capslock2esc.reg:</p>
-<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;&#x3D;hex:00,00,00,00,00,00,00,00,02,00,00,00,01,00,3a,00,00,00,00,00</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]</span><br><span class="line">&quot;Scancode Map&quot;=hex:00,00,00,00,00,00,00,00,02,00,00,00,01,00,3a,00,00,00,00,00</span><br></pre></td></tr></table></div></figure>
 
 <p>双击写入注册表</p>
 </li>
@@ -49,9 +49,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></he
       
         <h3 id="退出编辑模式的时候输入法自动选择成英文"   >
           <a href="#退出编辑模式的时候输入法自动选择成英文" class="heading-link"><i class="fas fa-link"></i></a>退出编辑模式的时候输入法自动选择成英文</h3>
-      <p>1.安装<span class="exturl"><a class="exturl__link"   href="https://github.com/daipeihust/im-select#installation"  target="_blank" rel="noopener">im-select</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br> 2.vim 中 setting.json 插入</p>
-<figure class="highlight"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"vim.autoSwitchInputMethod.enable": true,</span><br><span class="line">"vim.autoSwitchInputMethod.defaultIM": "1033",</span><br><span class="line">"vim.autoSwitchInputMethod.obtainIMCmd": "D:\\im-select\\im-select.exe",</span><br><span class="line">"vim.autoSwitchInputMethod.switchIMCmd": "D:\\im-select\\im-select.exe &#123;im&#125;",</span><br></pre></td></tr></table></div></figure>
-</li>
+      <p>1.安装<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/daipeihust/im-select#installation" >im-select</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br> 2.vim 中 setting.json 插入</p>
+<figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;vim.autoSwitchInputMethod.enable&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span>: <span class="string">&quot;1033&quot;</span>,</span><br><span class="line"><span class="string">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span>: <span class="string">&quot;D:\\im-select\\im-select.exe&quot;</span>,</span><br><span class="line"><span class="string">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span>: <span class="string">&quot;D:\\im-select\\im-select.exe &#123;im&#125;&quot;</span>,</span><br></pre></td></tr></table></div></figure></li>
 <li>
         <h2 id="chrome-安装-surfingKey"   >
           <a href="#chrome-安装-surfingKey" class="heading-link"><i class="fas fa-link"></i></a>chrome 安装 surfingKey</h2>
