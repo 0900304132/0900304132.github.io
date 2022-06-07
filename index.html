@@ -110,6 +110,53 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></he
 <p>其中使用 <code>Infinity</code> 作为 <code>flat</code> 的参数, 使得无需知道被扁平化数组的维度.</p>
 <p><strong>补充</strong></p>
 <p><code>flat</code> 不支持 IE 浏览器.</p>
+
+        <h1 id="七-关于获取对象属性值的吐槽"   >
+          <a href="#七-关于获取对象属性值的吐槽" class="heading-link"><i class="fas fa-link"></i></a>七. 关于获取对象属性值的吐槽</h1>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = obj &amp;&amp; obj.name</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>吐槽</strong></p>
+<p>ES6 中的可选链操作符会使用么?</p>
+<p><strong>改进</strong></p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = obj?.name</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="八-关于添加对象属性的吐槽"   >
+          <a href="#八-关于添加对象属性的吐槽" class="heading-link"><i class="fas fa-link"></i></a>八. 关于添加对象属性的吐槽</h1>
+      <p>当给对象添加属性时, 如果属性名是动态变化的, 该怎么处理.</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> index = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> key = <span class="string">`topic<span class="subst">$&#123;index&#125;</span>`</span></span><br><span class="line"></span><br><span class="line">obj[key] = <span class="string">&#x27;话题内容&#x27;</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>吐槽</strong></p>
+<p>为何要额外创建一个变量. 不知道 ES6 中的对象属性名是可以用表达式吗?</p>
+<p><strong>改进</strong></p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> index = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">obj[<span class="string">`topic<span class="subst">$&#123;index&#125;</span>`</span>] = <span class="string">&#x27;话题内容&#x27;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="九-关于输入框非空的判断"   >
+          <a href="#九-关于输入框非空的判断" class="heading-link"><i class="fas fa-link"></i></a>九. 关于输入框非空的判断</h1>
+      <p>在处理输入框相关业务时, 往往会判断输入框未输入值的场景.</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (value !== <span class="literal">null</span> &amp;&amp; value !== <span class="literal">undefined</span> &amp;&amp; value !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>吐槽</strong></p>
+<p>ES6 中新出的空值合并运算符了解过吗, 需要写那么多条件吗?</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((value ?? <span class="string">&#x27;&#x27;</span>) !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="十-关于异步函数的吐槽"   >
+          <a href="#十-关于异步函数的吐槽" class="heading-link"><i class="fas fa-link"></i></a>十. 关于异步函数的吐槽</h1>
+      <p>异步函数很常见, 经常是用<code>Promise</code>来实现.</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fn1 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">rs, rj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      rs(<span class="number">1</span>)</span><br><span class="line">    &#125;, <span class="number">300</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn2 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">rs, rj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      rs(<span class="number">2</span>)</span><br><span class="line">    &#125;, <span class="number">600</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  fn1.then(<span class="function">(<span class="params">res1</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res1) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    fn2.then(<span class="function">(<span class="params">res2</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res2) <span class="comment">// 2</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>吐槽</strong></p>
+<p>如果这样调用异步函数, 不怕形成地狱回调啊!</p>
+<p><strong>改进</strong></p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fn = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> res1 = <span class="keyword">await</span> fn1()</span><br><span class="line">  <span class="keyword">const</span> res2 = <span class="keyword">await</span> fn2()</span><br><span class="line">  <span class="built_in">console</span>.log(res1) <span class="comment">// 1</span></span><br><span class="line">  <span class="built_in">console</span>.log(res2) <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>补充</strong></p>
+<p>但是要做并发请求时, 还是要用到 <code>Promise.all()</code></p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fn = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">Promise</span>.all([fn1(), fn2()]).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res) <span class="comment">// [1,2]</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>如果并发请求时, 只要其中一个异步函数处理完成, 就返回结果, 要用到 <code>Promise.race()</code></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2022/03/25/2022-03-25/">JS 正则表达式 - 通过标志进行高级搜索</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-25</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="正则表达式-通过标志进行高级搜索"   >
           <a href="#正则表达式-通过标志进行高级搜索" class="heading-link"><i class="fas fa-link"></i></a>正则表达式 - 通过标志进行高级搜索</h1>
