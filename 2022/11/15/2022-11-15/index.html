@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="../../../../images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="../../../../images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="Vue 选项&#x2F;生命周期钩子        所有生命周期钩子的this上下文将自动绑定至实例中，因此你可以访问 data、computed 和 methods。这意味着你不应该使用箭头函数来定义一个生命周期函数。因为箭头函数绑定了父级上下文，所以this不会指向预期的组件实例，并且this.fetchTools将会是 undefined。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 选项&#x2F;生命周期钩子">
+<meta property="og:url" content="https://0900304132.github.io/2022/11/15/2022-11-15/index.html">
+<meta property="og:site_name" content="喵苗淼妙兮">
+<meta property="og:description" content="Vue 选项&#x2F;生命周期钩子        所有生命周期钩子的this上下文将自动绑定至实例中，因此你可以访问 data、computed 和 methods。这意味着你不应该使用箭头函数来定义一个生命周期函数。因为箭头函数绑定了父级上下文，所以this不会指向预期的组件实例，并且this.fetchTools将会是 undefined。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-15T05:32:14.000Z">
+<meta property="article:modified_time" content="2022-11-15T06:44:03.394Z">
+<meta property="article:author" content="shi yang">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary"><title>Vue 选项/生命周期钩子 | 喵苗淼妙兮</title><link ref="canonical" href="https://0900304132.github.io/2022/11/15/2022-11-15/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="../../../../css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: undefined,
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Vue 选项/生命周期钩子</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-15</span></span></div></header><div class="post-body">
+        <h1 id="Vue-选项-生命周期钩子"   >
+          <a href="#Vue-选项-生命周期钩子" class="heading-link"><i class="fas fa-link"></i></a>Vue 选项/生命周期钩子</h1>
+      <blockquote>
+<p>所有生命周期钩子的<code>this</code>上下文将自动绑定至实例中，因此你可以访问 data、computed 和 methods。这意味着<strong>你不应该使用箭头函数来定义一个生命周期函数</strong>。因为箭头函数绑定了父级上下文，所以<code>this</code>不会指向预期的组件实例，并且<code>this.fetchTools</code>将会是 undefined。</p>
+</blockquote>
+
+        <h2 id="beforeCreate"   >
+          <a href="#beforeCreate" class="heading-link"><i class="fas fa-link"></i></a>beforeCreate</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>在实例初始化之后，进行数据侦听和事件/侦听器的配置之前同步调用。</p>
+</li>
+</ul>
+
+        <h2 id="created"   >
+          <a href="#created" class="heading-link"><i class="fas fa-link"></i></a>created</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>在实例创建完成后被立即同步调用。在这一步中，实例已完成对选项的处理，意味着一下内容已被配置完毕：数据侦听、计算属性、方法、事件/侦听器的回调函数。然而，挂载阶段还没开始，且<code>$el</code>property 目前尚不可用。</p>
+</li>
+</ul>
+
+        <h2 id="beforeMount"   >
+          <a href="#beforeMount" class="heading-link"><i class="fas fa-link"></i></a>beforeMount</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>在挂载开始之前被调用: 相关的<code>render</code>函数首次被调用。</p>
+<p><strong>该钩子在服务端渲染期间不被调用。</strong></p>
+</li>
+</ul>
+
+        <h2 id="mounted"   >
+          <a href="#mounted" class="heading-link"><i class="fas fa-link"></i></a>mounted</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>实例被挂载后调用，这时<code>el</code>被新创建的<code>vm.$el</code>替换了。如果跟实例挂载挂载到了一个文档内的元素上，当<code>moundted</code>被调用时<code>vm.$el</code>也在文档内。</p>
+<p>注意<code>mounted</code><strong>不会</strong>保证所有的子组件也都被挂载完成。如果你希望等到整个视图都渲染完成再执行某些操作，可以在<code>mounted</code>内部使用<code>[vm.$nextTick]()</code>:</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 仅在整个视图都被渲染之后才会运行的代码</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>该钩子在服务端渲染期间不被调用。</strong></p>
+</li>
+</ul>
+
+        <h2 id="beforeUpdate"   >
+          <a href="#beforeUpdate" class="heading-link"><i class="fas fa-link"></i></a>beforeUpdate</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>在数据发生改变后，DOM 被更新之前调用。这里适合在现有 DOM 将要被更新之前访问它，比如移除手动添加的事件监听器。</p>
+<p><strong>该钩子在服务端渲染期间不被调用，因为只有初次渲染会在服务端进行。</strong></p>
+</li>
+</ul>
+
+        <h2 id="udpated"   >
+          <a href="#udpated" class="heading-link"><i class="fas fa-link"></i></a>udpated</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>在数据更改导致的虚拟 DOM 重新渲染和更新完毕后被调用。</p>
+<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应更避免在此期间更改状态。如果要相应状态改变，通常使用<a href="">计算属性</a>或者<a href="">watcher</a>取而代之。</p>
+<p>注意，<code>updated</code> <strong>不会</strong>保证所有的子组件也都被重新渲染完毕。如果你希望等到整个视图都渲染完毕，可以在<code>updated</code>里面使用<code>[vm.$nextTick()]</code>:</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">updated:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 仅在整个视图都被重新渲染之后才会运行的代码</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h2 id="activated"   >
+          <a href="#activated" class="heading-link"><i class="fas fa-link"></i></a>activated</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>被 keep-alive 缓存的组件激活时调用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+</li>
+</ul>
+
+        <h2 id="deactiveted"   >
+          <a href="#deactiveted" class="heading-link"><i class="fas fa-link"></i></a>deactiveted</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>被 keep-alive 缓存的组件失活时调用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+</li>
+</ul>
+
+        <h2 id="beforeDestory"   >
+          <a href="#beforeDestory" class="heading-link"><i class="fas fa-link"></i></a>beforeDestory</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>实例销毁之前调用。在这一步，实例任然完全可用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+</li>
+</ul>
+
+        <h2 id="destoried"   >
+          <a href="#destoried" class="heading-link"><i class="fas fa-link"></i></a>destoried</h2>
+      <ul>
+<li><p>类型: <code>Function</code></p>
+</li>
+<li><p>详细:</p>
+<p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+</li>
+</ul>
+
+        <h2 id="errorCaptured"   >
+          <a href="#errorCaptured" class="heading-link"><i class="fas fa-link"></i></a>errorCaptured</h2>
+      <blockquote>
+<p><strong>2.5.0 新增</strong></p>
+</blockquote>
+<ul>
+<li><p>类型: <code>(err: Error, vm: Component, info: string) =&gt; ?boolean</code></p>
+</li>
+<li><p>详细:</p>
+<p>在捕获一个来自后代组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回<code>false</code>以阻止该错误继续向上传播。</p>
+<blockquote>
+<p>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其他内容就很重要；不然该组件可能会进入一个无限的渲染循环。</p>
+</blockquote>
+<p><strong>错误传播规则</strong></p>
+<ul>
+<li>默认情况下，如果全局的<code>config.errorHandler</code>被定义，所有的错误任然会发送它，因此这些错误任然会向单一的分析服务的地方进行汇报。</li>
+<li>如果一个组件的 inheritance chain (继承链)或 parent chain 中存在多个<code>errorCaptured</code>钩子，则它们将会被相同的错误逐个唤起。</li>
+<li>如果此<code>errorCaptured</code>钩子自身抛出了一个错误， 则这个新错误和原本被捕获的错误都会发送给全局的<code>config.errorHandler</code>。</li>
+<li>一个<code>errorCaptured</code>钩子能够返回<code>false</code>以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其他任何会被这个错误唤起的<code>errorCaptured</code>钩子和全局的<code>config.errorHandler</code>。</li>
+</ul>
+</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://0900304132.github.io">shi yang</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://0900304132.github.io/2022/11/15/2022-11-15/">https://0900304132.github.io/2022/11/15/2022-11-15/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://0900304132.github.io/tags/Vue/">Vue</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="../../10/2022-11-10/"><span class="paginator-prev__text">Intersection Observer API</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90"><span class="toc-number">1.</span> <span class="toc-text">
+          Vue 选项&#x2F;生命周期钩子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#beforeCreate"><span class="toc-number">1.1.</span> <span class="toc-text">
+          beforeCreate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#created"><span class="toc-number">1.2.</span> <span class="toc-text">
+          created</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#beforeMount"><span class="toc-number">1.3.</span> <span class="toc-text">
+          beforeMount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mounted"><span class="toc-number">1.4.</span> <span class="toc-text">
+          mounted</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#beforeUpdate"><span class="toc-number">1.5.</span> <span class="toc-text">
+          beforeUpdate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#udpated"><span class="toc-number">1.6.</span> <span class="toc-text">
+          udpated</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#activated"><span class="toc-number">1.7.</span> <span class="toc-text">
+          activated</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deactiveted"><span class="toc-number">1.8.</span> <span class="toc-text">
+          deactiveted</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#beforeDestory"><span class="toc-number">1.9.</span> <span class="toc-text">
+          beforeDestory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#destoried"><span class="toc-number">1.10.</span> <span class="toc-text">
+          destoried</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#errorCaptured"><span class="toc-number">1.11.</span> <span class="toc-text">
+          errorCaptured</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bitcoin"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">42</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">4</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="../../../../images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="../../../../http:/hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.0.0</span><span class="footer__devider">|</span><span>主题 - <a href="../../../../https:/github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="../../../../js/utils.js?v=2.1.1"></script><script src="../../../../js/stun-boot.js?v=2.1.1"></script><script src="../../../../js/scroll.js?v=2.1.1"></script><script src="../../../../js/header.js?v=2.1.1"></script><script src="../../../../js/sidebar.js?v=2.1.1"></script></body></html>
