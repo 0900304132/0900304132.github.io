@@ -29,7 +29,19 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">喵苗淼妙兮</div><div class="header-banner-info__subtitle">越懒越机智啊</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2023/03/30/2023-03-29/">2023-03-29</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">喵苗淼妙兮</div><div class="header-banner-info__subtitle">越懒越机智啊</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2023/03/31/2023-03-30/">2023-03-30</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-31</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-31</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="1026【小程序-检验任务单】维护检验记录是空的"   >
+          <a href="#1026【小程序-检验任务单】维护检验记录是空的" class="heading-link"><i class="fas fa-link"></i></a>1026【小程序-检验任务单】维护检验记录是空的</h2>
+      <p>移动端的 detailonly 类型的页面没有实现, 所以跳转页面不显示.</p>
+<p>移动端的详细页面的方法被我抽出来共通到一个 mixin 了, 所以只要 import 一下 mixin, 再增加一下类型就可以了.</p>
+
+        <h2 id="【小程序-审批】审批单点了拒绝后填写了原因后页面回到了列表页，但是提示弹窗还没有关闭"   >
+          <a href="#【小程序-审批】审批单点了拒绝后填写了原因后页面回到了列表页，但是提示弹窗还没有关闭" class="heading-link"><i class="fas fa-link"></i></a>【小程序-审批】审批单点了拒绝后填写了原因后页面回到了列表页，但是提示弹窗还没有关闭</h2>
+      <p>移动端审批列表的点击事件没有添加 stop, 所以点击子操作按钮的时候, 在 ios 里会触发父 div 的 click 事件.</p>
+<p>本来审批拒绝按钮点击后, 是直接在列表页面弹出一个 dialog, 输入拒绝理由后就直接更新审批状态的, 现在会进入到审批详情页面, 并且列表页面的弹框也会显示出来. 关闭详情后列表的弹窗也没有关闭, 才有这个问题.</p>
+<p>在 click 事件上增加 stop 标识就好了.</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">&quot;xxx2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2023/03/30/2023-03-29/">2023-03-29</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-03-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-03-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="1021【小程序-检验任务单】物料名称选不中"   >
           <a href="#1021【小程序-检验任务单】物料名称选不中" class="heading-link"><i class="fas fa-link"></i></a>1021【小程序-检验任务单】物料名称选不中</h2>
       <p>这个问题是因为 vant 的 picker 控件选中返回的 value 是选中的对象, 我是通过选中的值再去列表里面反查出来选择的对象的 key 的值.</p>
@@ -155,145 +167,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.0.0"></he
 
 <p>然后你在<code>&lt;navigation-link&gt;</code>的模板中可能会写为：</p>
 <figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TODO</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="2022/11/15/2022-11-15/">Vue 选项/生命周期钩子</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-15</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="Vue-选项-生命周期钩子"   >
-          <a href="#Vue-选项-生命周期钩子" class="heading-link"><i class="fas fa-link"></i></a>Vue 选项/生命周期钩子</h1>
-      <blockquote>
-<p>所有生命周期钩子的<code>this</code>上下文将自动绑定至实例中，因此你可以访问 data、computed 和 methods。这意味着<strong>你不应该使用箭头函数来定义一个生命周期函数</strong>。因为箭头函数绑定了父级上下文，所以<code>this</code>不会指向预期的组件实例，并且<code>this.fetchTools</code>将会是 undefined。</p>
-</blockquote>
-
-        <h2 id="beforeCreate"   >
-          <a href="#beforeCreate" class="heading-link"><i class="fas fa-link"></i></a>beforeCreate</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>在实例初始化之后，进行数据侦听和事件/侦听器的配置之前同步调用。</p>
-</li>
-</ul>
-
-        <h2 id="created"   >
-          <a href="#created" class="heading-link"><i class="fas fa-link"></i></a>created</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>在实例创建完成后被立即同步调用。在这一步中，实例已完成对选项的处理，意味着一下内容已被配置完毕：数据侦听、计算属性、方法、事件/侦听器的回调函数。然而，挂载阶段还没开始，且<code>$el</code>property 目前尚不可用。</p>
-</li>
-</ul>
-
-        <h2 id="beforeMount"   >
-          <a href="#beforeMount" class="heading-link"><i class="fas fa-link"></i></a>beforeMount</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>在挂载开始之前被调用: 相关的<code>render</code>函数首次被调用。</p>
-<p><strong>该钩子在服务端渲染期间不被调用。</strong></p>
-</li>
-</ul>
-
-        <h2 id="mounted"   >
-          <a href="#mounted" class="heading-link"><i class="fas fa-link"></i></a>mounted</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>实例被挂载后调用，这时<code>el</code>被新创建的<code>vm.$el</code>替换了。如果跟实例挂载挂载到了一个文档内的元素上，当<code>moundted</code>被调用时<code>vm.$el</code>也在文档内。</p>
-<p>注意<code>mounted</code><strong>不会</strong>保证所有的子组件也都被挂载完成。如果你希望等到整个视图都渲染完成再执行某些操作，可以在<code>mounted</code>内部使用<code>[vm.$nextTick]()</code>:</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 仅在整个视图都被渲染之后才会运行的代码</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p><strong>该钩子在服务端渲染期间不被调用。</strong></p>
-</li>
-</ul>
-
-        <h2 id="beforeUpdate"   >
-          <a href="#beforeUpdate" class="heading-link"><i class="fas fa-link"></i></a>beforeUpdate</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>在数据发生改变后，DOM 被更新之前调用。这里适合在现有 DOM 将要被更新之前访问它，比如移除手动添加的事件监听器。</p>
-<p><strong>该钩子在服务端渲染期间不被调用，因为只有初次渲染会在服务端进行。</strong></p>
-</li>
-</ul>
-
-        <h2 id="udpated"   >
-          <a href="#udpated" class="heading-link"><i class="fas fa-link"></i></a>udpated</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>在数据更改导致的虚拟 DOM 重新渲染和更新完毕后被调用。</p>
-<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应更避免在此期间更改状态。如果要相应状态改变，通常使用<a href="">计算属性</a>或者<a href="">watcher</a>取而代之。</p>
-<p>注意，<code>updated</code> <strong>不会</strong>保证所有的子组件也都被重新渲染完毕。如果你希望等到整个视图都渲染完毕，可以在<code>updated</code>里面使用<code>[vm.$nextTick()]</code>:</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">updated:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 仅在整个视图都被重新渲染之后才会运行的代码</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h2 id="activated"   >
-          <a href="#activated" class="heading-link"><i class="fas fa-link"></i></a>activated</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>被 keep-alive 缓存的组件激活时调用。</p>
-<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
-</li>
-</ul>
-
-        <h2 id="deactiveted"   >
-          <a href="#deactiveted" class="heading-link"><i class="fas fa-link"></i></a>deactiveted</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>被 keep-alive 缓存的组件失活时调用。</p>
-<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
-</li>
-</ul>
-
-        <h2 id="beforeDestory"   >
-          <a href="#beforeDestory" class="heading-link"><i class="fas fa-link"></i></a>beforeDestory</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>实例销毁之前调用。在这一步，实例任然完全可用。</p>
-<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
-</li>
-</ul>
-
-        <h2 id="destoried"   >
-          <a href="#destoried" class="heading-link"><i class="fas fa-link"></i></a>destoried</h2>
-      <ul>
-<li><p>类型: <code>Function</code></p>
-</li>
-<li><p>详细:</p>
-<p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
-<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
-</li>
-</ul>
-
-        <h2 id="errorCaptured"   >
-          <a href="#errorCaptured" class="heading-link"><i class="fas fa-link"></i></a>errorCaptured</h2>
-      <blockquote>
-<p><strong>2.5.0 新增</strong></p>
-</blockquote>
-<ul>
-<li><p>类型: <code>(err: Error, vm: Component, info: string) =&gt; ?boolean</code></p>
-</li>
-<li><p>详细:</p>
-<p>在捕获一个来自后代组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回<code>false</code>以阻止该错误继续向上传播。</p>
-<blockquote>
-<p>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其他内容就很重要；不然该组件可能会进入一个无限的渲染循环。</p>
-</blockquote>
-<p><strong>错误传播规则</strong></p>
-<ul>
-<li>默认情况下，如果全局的<code>config.errorHandler</code>被定义，所有的错误任然会发送它，因此这些错误任然会向单一的分析服务的地方进行汇报。</li>
-<li>如果一个组件的 inheritance chain (继承链)或 parent chain 中存在多个<code>errorCaptured</code>钩子，则它们将会被相同的错误逐个唤起。</li>
-<li>如果此<code>errorCaptured</code>钩子自身抛出了一个错误， 则这个新错误和原本被捕获的错误都会发送给全局的<code>config.errorHandler</code>。</li>
-<li>一个<code>errorCaptured</code>钩子能够返回<code>false</code>以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其他任何会被这个错误唤起的<code>errorCaptured</code>钩子和全局的<code>config.errorHandler</code>。</li>
-</ul>
-</li>
-</ul>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="page/6/">6</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bitcoin"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">51</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">28</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.0.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="js/utils.js?v=2.1.1"></script><script src="js/stun-boot.js?v=2.1.1"></script><script src="js/scroll.js?v=2.1.1"></script><script src="js/header.js?v=2.1.1"></script><script src="js/sidebar.js?v=2.1.1"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="page/6/">6</a><a class="extend next" rel="next" href="page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="http://image.xunkuyun.com/img_upload/project/jxshcore/uploadImage/good_icon/2020/07/20200708102041622967.png" alt="avatar"></div><p class="sidebar-ov-author__text">穷则搁置争议, 富则自古以来</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0900304132" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://space.bilibili.com/14950687" target="_blank" rel="noopener" data-popover="B站" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-bitcoin"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">52</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">28</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>shi yang</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.0.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="js/utils.js?v=2.1.1"></script><script src="js/stun-boot.js?v=2.1.1"></script><script src="js/scroll.js?v=2.1.1"></script><script src="js/header.js?v=2.1.1"></script><script src="js/sidebar.js?v=2.1.1"></script></body></html>
